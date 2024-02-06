@@ -10,6 +10,7 @@ def normalize_symbol(char):
 
 def main():
     pattern = re.compile('[A-Za-zÁÉÍÓÚáéíóú ]+')
+    punctuation = re.compile('[!.,;:?]+')
     non_alpha_freq = Counter()
 
     for line in sys.stdin:
