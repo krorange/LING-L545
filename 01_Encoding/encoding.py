@@ -13,7 +13,7 @@ def main():
     non_alpha_freq = Counter()
 
     for line in sys.stdin:
-        if pattern.search(line):
+        if pattern.search(line) and punctuation.search(line.rstrip():
             # Output lines with both upper and lower case alphabetic characters to stdout
             sys.stdout.write(line)
 
