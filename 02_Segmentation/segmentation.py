@@ -4,7 +4,7 @@ import re
 line = sys.stdin.readline()
 
 irabb = ['.i.', 'm.sh.', 'srl.', 'Br.']
-genabb = re.compile('[1-9]+\.|[A-Za-zÁÉÍÓÚáéíóú]+\.[A-Za-zÁÉÍÓÚáéíóú]+\.')
+genabb = re.compile('[1-9]+\.|[A-Za-zÁÉÍÓÚáéíóú ]+\.[A-Za-zÁÉÍÓÚáéíóú ]+\.')
 
 while line:
     for token in line.strip().split(' '):
