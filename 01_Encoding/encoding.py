@@ -9,8 +9,8 @@ def normalize_symbol(char):
     return normalized_char
 
 def main():
-    pattern = re.compile('[A-Za-zÁÉÍÓÚáéíóú ]+')
-    punctuation = re.compile('[.!?]+')
+    pattern = re.compile('[0-9A-Za-zÁÉÍÓÚáéíóú ]+')
+    punctuation = re.compile('[!”#$%&\'"()*+,-─—./:;<=>?@[\]^_`{|}~:–‘’“…´′″‛，]+')
     non_alpha_freq = Counter()
 
     for line in sys.stdin:
@@ -19,7 +19,7 @@ def main():
             sys.stdout.write(line)
 
             # Update non-alphabetic character frequency list
-            non_alpha_chars = re.findall(r'[^A-Za-zÁÉÍÓÚáéíóú]', line)
+            non_alpha_chars = re.findall(r'[^\s\n0-9A-Za-zÁÉÍÓÚáéíóú!”#$%&\'"()*+,-─—./:;<=>?@[\]^_`{|}~:–‘’“…´′″‛，]', line)
             non_alpha_freq.update(non_alpha_chars)
             
             for char in non_alpha_chars:
