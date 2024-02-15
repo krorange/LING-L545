@@ -4,7 +4,6 @@ import re
 line = sys.stdin.readline()
 
 irabb = ['.i.', 'm.sh.', 'srl.', 'Br.']
-genabb = re.compile('[1-9]+\.|[A-Za-zÁÉÍÓÚáéíóú ]+\.[A-Za-zÁÉÍÓÚáéíóú ]+\.')
 
 while line:
     for token in line.strip().split(' '):
@@ -18,10 +17,11 @@ while line:
                 sys.stdout.write(token + ' ')
             elif cleantoken in irabb:
                 sys.stdout.write(token + ' ')
-            elif genabb.search(token):
+            elif re.match('[0-9a-zA-ZÁÉÍÓÚáéíóú]\.', token):
                 sys.stdout.write(token + ' ')
             else:
                 sys.stdout.write(token + '\n')
         else:
             sys.stdout.write(token + ' ')
+            
     line = sys.stdin.readline()
