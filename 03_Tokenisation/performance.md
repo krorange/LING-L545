@@ -14,7 +14,7 @@ Below is the output of evaluation, including the number of sentences processed a
 Number of sentences: 200
 Average WER: 29.41%
 
-Below is the example of performance:
+Below is an example of the evaluation results:
 
 WER: 32.65%
 REF: 紀元 前 4 9  年 1 月 1 日 、 マ ル コ   ・ アン ト ニ オ     は 、 総督 が 自分 自身 を 平和 の 友 で ある と 宣言 し た 、 カ エ サ ル    から の 宣言 書 を 読 み 上げ   た 。
