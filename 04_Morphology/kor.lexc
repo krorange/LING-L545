@@ -1,0 +1,67 @@
+Multichar_Symbols
+
+%<pref%>            ! Prefix
+%<n%>               ! Noun 
+%<gen%>             ! Genetive
+%>                  ! Morpheme boundary
+
+LEXICON Root
+
+Prefix1 ;
+Prefix2 ;
+Prefix3 ;
+Prefix4 ;
+
+LEXICON Prefix1
+
+맨%>:%<pref%> Noun1 ; ! "bare" ;
+
+LEXICON Noun1
+
+얼굴:%<n%> CASE ; ! "a face" ;
+손:%<n%> CASE ; ! "a hand"
+발:%<n%> CASE ; ! "a foot"
+몸:%<n%> CASE ; ! "a body"
+정신:%<n%> CASE ; ! "mind"
+
+LEXICON Prefix2
+
+신%>:%<pref%> Noun2 ; ! "new"
+
+LEXICON Noun2
+
+여성:%<n%> CASE ; ! "a woman"
+남성:%<n%> CASE ; ! "a man"
+제품:%<n%> CASE ; ! "a product"
+유행:%<n%> CASE ; ! "a trend"
+세대:%<n%> CASE ; ! "a generation"
+
+LEXICON Prefix3
+
+풋%>:%<pref%> Noun3 ; ! "young"
+
+LEXICON Noun3
+
+사과:%<n%> CASE ; ! "an apple"
+고추:%<n%> CASE ; ! "a man"
+감자:%<n%> CASE ; ! "a potato"
+배:%<n%> CASE ; ! "a pear"
+김치:%<n%> CASE ; ! "kimchi"
+
+LEXICON Prefix4
+
+초%>:%<pref%> Noun4 ; ! "early"
+늦%>:%<pref%> Noun4 ; ! "late"
+
+LEXICON Noun4
+
+봄:%<n%> CASE ; ! "spring"
+여름:%<n%> CASE ; ! "summer"
+가을:%<n%> CASE ; ! "autumn"
+겨울:%<n%> CASE ; ! "winter"
+저녁:%<n%> CASE ; ! "evening"
+
+LEXICON CASE
+
+%>의:%<gen%> # ; ! "of" ;
+# ;
