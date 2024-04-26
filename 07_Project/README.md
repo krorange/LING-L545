@@ -7,7 +7,8 @@ The corpus for this study is 75 contemporary ecofiction books. Jim Dwyer (2010)â
 All distant reading tasks were done in HathiTrust Research Center Analytics' data capsule, "a system of secure computing environments for performing researcher-driven text analysis on the HathiTrust corpus."[^2] First, syntactic parsing along with tokenization and lemmatization was done using BookNLP's part-of-speech tagging and dependency parsing features. After tokens were parsed, each subject was categorized as either human or nonhuman using BookNLP's supersense tagging feature, which assists in "annotating text with the tagset defined by the 41 Wordnet supersense classes for nouns and verbs."[^3] Among the supersense tagged tokens, tokens labeled as **noun.person** went under the human category, whereas those labeled as **noun.animal** and **noun.plant** under the nonhuman category.
 
 
-## References
+
+# References
 [^1]: Dwyer, J. (2010). _Where the Wild Books Are: A Field Guide to Ecofiction_. University of Nevada Press.
 [^2]: HathiTrust Digital Library. (n.d.). (https://www.hathitrust.org/). Accessed April 23, 2024.
 [^3]: JÃ¤nicke, S., Franzini, G., Cheema, M. F., & Scheuermann, G. (2015). On close and distant reading in digital humanities: A survey and future challenges. In R. Borgo, F. Ganovelli, & I. Viola (Eds.), _A State-of-the-Art (STAR) Report_ (pp. 83-103). The Eurographics Association. (http://dx.doi.org/10.2312/eurovisstar.20151113)
