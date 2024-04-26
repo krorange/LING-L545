@@ -3,7 +3,7 @@
 from booknlp.booknlp import BookNLP
 
 model_params={
-		"pipeline":"supersense,entity", 
+		"pipeline":"entity,supersense", 
 		"model":"big"
 	}
 	
