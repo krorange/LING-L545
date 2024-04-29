@@ -1,0 +1,105 @@
+DELIMITERS = "." ;
+
+LIST Prop = np ;
+LIST Adj = adj ;
+LIST Unlike = "unlike" ;
+
+LIST Cnjadv = cnjadv ;
+LIST Cm = cm ;
+LIST Sent = sent ;
+
+LIST For = "for" ;
+
+LIST Past = past ;
+LIST Be = "be" ;
+LIST Have = "have" ;
+LIST Adv = adv ;
+
+LIST By = "by" ;
+LIST N = n ;
+LIST Np = np ;
+
+LIST Vblex = vblex ;
+LIST Lpar = lpar ;
+LIST Writing = "writing" ;
+
+LIST Itg = itg ;
+LIST Who = "who" ;
+
+LIST P1 = p1 ;
+LIST Prn = prn ;
+
+LIST Contemporary = "contemporary" ;
+LIST Pr = pr ;
+
+LIST Described = "describe" ;
+
+LIST Ger = ger ;
+LIST Vbser = vbser ;
+LIST Write = "write" ;
+
+LIST Some = "some" ;
+
+LIST Later = "late" ;
+
+SECTION
+
+# Remove the adjective reading of "unlike" if it is 
+# followed by a proper noun
+REMOVE Adj IF (0 Unlike) (1 Prop) ; 
+# ... unlike Livy ...
+
+# Remove the adverbial conjunction reading of "for" if it is
+# not following a comma or an end-of-sentence marker
+REMOVE Cnjadv IF (NOT -1 Cm OR Sent) (0 For) ;
+# ... identity for ...
+
+# Remove the past reading of "contradict" if it is
+# following "have" or "be"
+REMOVE Past IF (-1* Be OR Have BARRIER (*) - Adv) ;
+# ... is apparantly contradicted ...
+
+# Remove the adverbial reading of "by" if it is
+# followed by a noun
+REMOVE Adv IF (0 By) (1 N OR Np) ;
+# ... by Polybius ...
+
+# Remove the verbial reading of "writing" if it is
+# following a logical partition
+REMOVE Vblex IF (-1 Lpar) (0 Writing) ;
+# ... ( writing ...
+
+# Remove the intangible pronoun reading of "who" if it is
+# following a comma
+REMOVE Itg IF (-1 Cm) (0 Who) ;
+# ... , who ...
+
+# Remove the first person reading of "was" if it is
+# following a pronoun
+REMOVE P1 IF (-1 Prn) (0 Be) ;
+# ... who was ...
+
+# Remove the adjective reading of "contemporary" if it is
+# following a preposition
+REMOVE Adj IF (0 Contemporary) (1 Pr) ;
+# ... contemporary of ...
+
+# Remove the past reading of "described" if it is
+# not following a noun
+REMOVE Past IF (0 Described) (NOT 1 N OR Np) ;
+# ... described, ...
+
+# Select the gerund reading of "writing" if it is
+# following a vbser
+SELECT Ger IF (-1 Vbser) (0 Write) ;
+# ... was writing ...
+
+# SELECT the adjective reading of "some" if it is
+# following a noun
+SELECT Adj IF (0 Some) (1* N) ;
+# ... some 200 years ...
+
+# REMOVE the adjective reading of "later" if it is
+# following a verb
+REMOVE Adj IF (-1* Vblex) (0 Later) ;
+# ... writing some 200 years later ...
